@@ -13,13 +13,9 @@ public class Conexao {
 		}catch (ClassNotFoundException e) {
 			// Erro de driver JDBC
 			e.printStackTrace();
-		}
-		
 	}
-	
-	
-
-
+}
+		
 protected Connection getConnection() throws SQLException {
 	//URL de conexão com o banco de dados
 	String url = "jdbc:mysql://localhost/banco";
@@ -28,4 +24,10 @@ protected Connection getConnection() throws SQLException {
 	return conn;
 	}
 
+public static void main(String[] args) throws SQLException {
+	Conexao db = new Conexao();
+	// Teste a conexão
+	Connection conn = db.getConnection();
+	System.out.println(conn);
+	}
 }
